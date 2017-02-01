@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/musicpataleta</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.password">1234</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping class="com.pataleta.musicService.dao.AuthorsEntity"/>
+    <mapping class="com.pataleta.musicService.dao.BasketauthorsEntity"/>
+    <mapping class="com.pataleta.musicService.dao.BasketcontainedsongEntity"/>
+    <mapping class="com.pataleta.musicService.dao.BasketplaylistsEntity"/>
+    <mapping class="com.pataleta.musicService.dao.GenrebusketEntity"/>
+    <mapping class="com.pataleta.musicService.dao.GenresEntity"/>
+    <mapping class="com.pataleta.musicService.dao.PlaylistEntity"/>
+    <mapping class="com.pataleta.musicService.dao.RatingsongsEntity"/>
+    <mapping class="com.pataleta.musicService.dao.SongEntity"/>
+    <mapping class="com.pataleta.musicService.dao.UserEntity"/>
+  </session-factory>
+</hibernate-configuration>

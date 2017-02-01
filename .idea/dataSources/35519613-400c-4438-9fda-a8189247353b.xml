@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="musicpataleta@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="musicpataleta">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="managerrestaurant"/>
+    <schema id="5" parent="1" name="musicservice"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="pataletarestaurant"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="restaurant"/>
+    <schema id="10" parent="1" name="sys"/>
+    <table id="11" parent="2" name="authors"/>
+    <table id="12" parent="2" name="basketauthors"/>
+    <table id="13" parent="2" name="basketcontainedsong"/>
+    <table id="14" parent="2" name="basketplaylists"/>
+    <table id="15" parent="2" name="genrebusket"/>
+    <table id="16" parent="2" name="genres"/>
+    <table id="17" parent="2" name="playlist"/>
+    <table id="18" parent="2" name="ratingsongs"/>
+    <table id="19" parent="2" name="song"/>
+    <table id="20" parent="2" name="user"/>
+    <column id="21" parent="11" name="idauthor">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="11" name="nameAuthor">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="23" parent="11" name="PRIMARY">
+      <ColNames>idauthor</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="12" name="idbasketauthors">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="12" name="idAuthor">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="12" name="idSong">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="27" parent="12" name="PRIMARY">
+      <ColNames>idbasketauthors</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="13" name="idBasketContainedSong">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="13" name="idPlaylist">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="13" name="idSong">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="31" parent="13" name="PRIMARY">
+      <ColNames>idBasketContainedSong</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="14" name="idbasketplaylists">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="14" name="idPlaylist">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="14" name="idUser">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="35" parent="14" name="PRIMARY">
+      <ColNames>idbasketplaylists</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="15" name="genreBusketID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="15" name="idSong">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="15" name="idGenre">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="39" parent="15" name="PRIMARY">
+      <ColNames>genreBusketID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="16" name="idGenre">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="16" name="genreName">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="42" parent="16" name="description">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <DefaultExpression>&apos;Нет описания&apos;</DefaultExpression>
+    </column>
+    <key id="43" parent="16" name="PRIMARY">
+      <ColNames>idGenre</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="17" name="idPlaylist">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="17" name="namePlaylist">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="46" parent="17" name="idBasketContainedSong">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="47" parent="17" name="PRIMARY">
+      <ColNames>idPlaylist</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="18" name="idratingSongs">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="18" name="idSong">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="50" parent="18" name="idUser">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="51" parent="18" name="Value">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="52" parent="18" name="PRIMARY">
+      <ColNames>idratingSongs</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="19" name="idSong">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="19" name="SongName">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="55" parent="19" name="idbasketauthors">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="19" name="YearPublish">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="57" parent="19" name="GenreBusketID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="58" parent="19" name="PRIMARY">
+      <ColNames>idSong</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="20" name="idUser">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="20" name="login">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="61" parent="20" name="password">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="62" parent="20" name="idBasketPlaylists">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="63" parent="20" name="PRIMARY">
+      <ColNames>idUser</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
