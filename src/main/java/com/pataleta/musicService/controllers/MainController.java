@@ -31,7 +31,7 @@ public class MainController {
             String userLogin = user.getName();
             System.out.println(userLogin);
             String userPassword = user.getPassword();
-            ResultSet resultSet = workWithDB.executeQuery(" SELECT idUser FROM user WHERE login= '"+userLogin+"'  ");
+            ResultSet resultSet = workWithDB.executeQuery(" SELECT idUser FROM user WHERE login= '"+userLogin+"' and password = '"+userPassword+"' ");
             if (resultSet == null) {
                 System.out.print(" null ");
                 modelAndView.setViewName("index");
