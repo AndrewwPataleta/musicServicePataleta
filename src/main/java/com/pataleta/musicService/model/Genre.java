@@ -29,4 +29,12 @@ public class Genre {
     private int idGenre;
     private String genreName;
     private String description;
+
+    public Genre(){}
+
+    public Genre(int idGenre, String genreName, String description){
+        this.idGenre = idGenre;
+        this.genreName = genreName;
+        this.description = description;
+    }
 }

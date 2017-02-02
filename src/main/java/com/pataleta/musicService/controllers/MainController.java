@@ -2,6 +2,7 @@ package com.pataleta.musicService.controllers;
 
 import com.pataleta.musicService.model.User;
 import com.pataleta.musicService.model.workWithDB;
+import com.pataleta.musicService.service.musicCollection;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,13 +29,15 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
         try {
             String userLogin = user.getName();
+            System.out.println(userLogin);
             String userPassword = user.getPassword();
-            ResultSet resultSet = workWithDB.executeQuery(" SELECT * FROM user WHERE login='" + userLogin + "'  ");
+            ResultSet resultSet = workWithDB.executeQuery(" SELECT idUser FROM user WHERE login= '"+userLogin+"'  ");
             if (resultSet == null) {
-                System.out.print("null ");
+                System.out.print(" null ");
                 modelAndView.setViewName("index");
                 return modelAndView;
             } else {
+                modelAndView.addObject("collectionAllSongs",new musicCollection());
                 modelAndView.setViewName("musicCatalog");
                 modelAndView.addObject("userJSP", user);
                 return modelAndView;

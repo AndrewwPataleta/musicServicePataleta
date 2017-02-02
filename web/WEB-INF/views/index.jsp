@@ -30,7 +30,8 @@ ${userJSP.name}
     <spring:input class="mdl-textfield__input"  id="sample3" path="password"/>
     <label class="mdl-textfield__label" for="sample3">Введите ваш пароль</label>
   </div>
-  <spring:button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect purple darken-2" >Войти</spring:button>
+  <spring:button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect purple darken-2 "  >Войти</spring:button>
+
   </spring:form>
 </div>
 

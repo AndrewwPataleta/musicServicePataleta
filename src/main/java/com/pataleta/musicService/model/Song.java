@@ -35,4 +35,17 @@ public class Song {
     private int YearPublish;
     private ArrayList<Author> collectionOfAuthors;
 
+    public Song(){}
+
+    public Song(int idSong, ArrayList<Author> collectionOfAuthors, int yearPublish, ArrayList<Genre> collectionOfGenres){
+        this.idSong = idSong;
+        this.collectionOfAuthors = collectionOfAuthors;
+        this.YearPublish = yearPublish;
+        this.collectionOfGenres = collectionOfGenres;
+    }
+
+    public String toString(){
+        return  " Имя: "+getSongName()+" год публикации: "+getYearPublish();
+    }
+
 }
